@@ -14,23 +14,25 @@ describe('GotCreatorForm', () => {
     };
   }));
 
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-  });
-
   describe('Controller', () => {
-    // controller specs
-    it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
-      expect(controller).to.have.property('name');
-    });
+      it('has goat property', () => {
+         let controller = makeController();
+
+         expect(controller).to.have.property('goat');
+      });
+
+      it('has add goat method', () => {
+          let controller = makeController();
+
+          expect(controller).to.have.property('goat');
+      });
   });
 
   describe('Template', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(GotCreatorFormTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+    it('expect to have ng-submit method call', () => {
+      expect(GotCreatorFormTemplate).to.match(/ng-submit="vm\.addGoat/g);
     });
   });
 

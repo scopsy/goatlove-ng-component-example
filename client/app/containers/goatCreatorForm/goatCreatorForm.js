@@ -1,10 +1,7 @@
-import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import angular                  from 'angular';
 import goatCreatorFormComponent from './goatCreatorForm.component';
 
-let gotCreatorFormModule = angular.module('gotCreatorForm', [
-  uiRouter
-])
+let gotCreatorFormModule = angular.module('gotCreatorForm', [])
 
 .component('goatCreatorForm', goatCreatorFormComponent);
 

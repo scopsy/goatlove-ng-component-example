@@ -1,6 +1,5 @@
 import template from './goatCreatorForm.html';
 import controller from './goatCreatorForm.controller';
-import './goatCreatorForm.scss';
 
 let gotCreatorFormComponent = {
   restrict: 'E',

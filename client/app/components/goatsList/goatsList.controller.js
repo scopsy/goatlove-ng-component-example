@@ -1,6 +1,6 @@
 class GoatsListController {
   constructor() {
-    this.name = 'goatsList';
+
   }
 }
 

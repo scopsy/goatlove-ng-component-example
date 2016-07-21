@@ -14,23 +14,9 @@ describe('GoatsList', () => {
     };
   }));
 
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-  });
-
-  describe('Controller', () => {
-    // controller specs
-    it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
-      expect(controller).to.have.property('name');
-    });
-  });
-
   describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(GoatsListTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+    it('It renders the goat-list-item directive', () => {
+      expect(GoatsListTemplate).to.match(/goat-list-item/g);
     });
   });
 
@@ -48,6 +34,10 @@ describe('GoatsList', () => {
 
       it('invokes the right controller', () => {
         expect(component.controller).to.equal(GoatsListController);
+      });
+
+      it('expose goats as one way input binding', () => {
+         expect(component.bindings.goats).to.equal('<');
       });
   });
 });

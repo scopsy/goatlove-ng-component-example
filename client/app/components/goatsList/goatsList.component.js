@@ -1,6 +1,5 @@
 import template from './goatsList.html';
 import controller from './goatsList.controller';
-import './goatsList.scss';
 
 let goatsListComponent = {
   restrict: 'E',

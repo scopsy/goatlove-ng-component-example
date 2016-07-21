@@ -1,4 +1,4 @@
-import template from './goatListItem.html';
+import template   from './goatListItem.html';
 import controller from './goatListItem.controller';
 import './goatListItem.scss';
 

@@ -1,7 +1,7 @@
-import GoatListItemModule from './goatListItem'
-import GoatListItemController from './goatListItem.controller';
-import GoatListItemComponent from './goatListItem.component';
-import GoatListItemTemplate from './goatListItem.html';
+import GoatListItemModule       from './goatListItem'
+import GoatListItemController   from './goatListItem.controller';
+import GoatListItemComponent    from './goatListItem.component';
+import GoatListItemTemplate     from './goatListItem.html';
 
 describe('GoatListItem', () => {
   let $rootScope, makeController;
@@ -14,24 +14,19 @@ describe('GoatListItem', () => {
     };
   }));
 
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-  });
-
-  describe('Controller', () => {
-    // controller specs
-    it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      let controller = makeController();
-      expect(controller).to.have.property('name');
-    });
-  });
-
   describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(GoatListItemTemplate).to.match(/{{\s?vm\.name\s?}}/g);
-    });
+
+      it('has img for the goat', () => {
+          expect(GoatListItemTemplate).to.match(/{{\s?vm\.goat\.photo\s?}}/g);
+      });
+
+      it('has goat name in the template', () => {
+          expect(GoatListItemTemplate).to.match(/{{\s?vm\.goat\.name\s?}}/g);
+      });
+
+      it('has goats about info in the template', () => {
+          expect(GoatListItemTemplate).to.match(/{{\s?vm\.goat\.about\s?}}/g);
+      });
   });
 
   describe('Component', () => {
@@ -48,6 +43,10 @@ describe('GoatListItem', () => {
 
       it('invokes the right controller', () => {
         expect(component.controller).to.equal(GoatListItemController);
+      });
+
+      it('have the correct goat interace', () => {
+         expect(component.bindings.goat).to.equal('<');
       });
   });
 });
