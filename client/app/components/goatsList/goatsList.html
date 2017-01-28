@@ -1,7 +1,7 @@
 <div class="row">
   <div class="jumbotron">
     <p>This page will list all of our goats registered, you can view the listings, or create your own profile!</p>
-    <p><a class="btn btn-primary btn-lg" href="#/app/create" role="button">Create Entry</a></p>
+    <p><a class="btn btn-primary btn-lg" ui-sref="app.create" role="button">Create Entry</a></p>
   </div>
 
   <goat-list-item ng-repeat="goat in vm.goats" goat="goat"></goat-list-item>
