@@ -23,6 +23,10 @@ class GotCreatorFormController {
     // go to home page, to see our entry
     this.$state.go('app.home');
   }
+
+  checkIfUpdating() {
+    return this.GoatsService.isUpdateMode();
+  }
 }
 
 export default GotCreatorFormController;

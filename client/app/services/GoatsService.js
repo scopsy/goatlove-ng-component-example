@@ -11,6 +11,9 @@ function GoatsService() {
         }
     ];
 
+    let updatedGoat = {};
+    let isUpdating = false;
+
     return {
 
         // Will retrieve our goats list for displaying
@@ -31,6 +34,16 @@ function GoatsService() {
             };
 
             goats.push(tempGoat);
+        },
+
+        storeUpdatedGoat(goat) {
+            updatedGoat = goat;
+            isUpdating = true;
+            console.log(updatedGoat);
+        },
+
+        isUpdateMode() {
+            return isUpdating;
         }
     }
 }
