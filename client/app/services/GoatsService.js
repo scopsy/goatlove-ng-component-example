@@ -36,14 +36,34 @@ function GoatsService() {
             goats.push(tempGoat);
         },
 
+        updateGoat(goat) {
+            console.log('Updating goat in service - ');
+            console.log(updatedGoat);
+            console.log('recieved - ');
+            console.log(goat);
+            for (var property in goat) {
+                if (goat.hasOwnProperty(property)) {
+                    updatedGoat[property] = goat[property];
+                    console.log(updatedGoat);
+                }
+            }
+        },
+
         storeUpdatedGoat(goat) {
             updatedGoat = goat;
             isUpdating = true;
-            console.log(updatedGoat);
         },
 
         isUpdateMode() {
             return isUpdating;
+        },
+
+        setUpdate(updating) {
+            isUpdating = updating;
+        },
+
+        getUpdate() {
+            return updatedGoat;
         }
     }
 }
