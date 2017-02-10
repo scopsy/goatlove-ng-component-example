@@ -6,6 +6,7 @@ class GotCreatorFormController {
     this.GoatsService = GoatsService;
 
     this.goat = {};
+    this.updatedGoat = this.GoatsService.getUpdate();
   }
 
   // will handle the form submission,
@@ -22,6 +23,16 @@ class GotCreatorFormController {
 
     // go to home page, to see our entry
     this.$state.go('app.home');
+  }
+
+    updateGoat() {
+      console.log('Update in create form...');
+      this.GoatsService.updateGoat(this.goat);
+      this.$state.go('app.home');
+    }
+
+  checkIfUpdating() {
+    return this.GoatsService.isUpdateMode();
   }
 }
 

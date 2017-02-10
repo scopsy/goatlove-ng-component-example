@@ -1,6 +1,8 @@
 class GoatsListController {
-  constructor() {
-
+  constructor(GoatsService) {
+      "ngInject";
+      this.GoatsService = GoatsService;
+      this.GoatsService.setUpdate(false);
   }
 }
 
