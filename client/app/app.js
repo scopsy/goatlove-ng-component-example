@@ -6,6 +6,7 @@ import NavigationComponent from './components/navigation/navigation';
 
 import HomeComponent from './pages/home/home';
 import CreateComponent from './pages/create/create';
+import AboutComponent from './pages/about/about'
 
 import GoatsService from './services/GoatsService';
 
@@ -19,7 +20,8 @@ angular
 
         NavigationComponent.name,
         CreateComponent.name,
-        HomeComponent.name
+        HomeComponent.name,
+        AboutComponent.name
     ])
     .config(($locationProvider, $stateProvider, $urlRouterProvider) => {
         "ngInject";
@@ -43,6 +45,12 @@ angular
             .state('app.create', {
                 url: '/create',
                 template: '<create></create>'
+            })
+
+            // Create route for About page
+            .state('app.about', {
+                url: '/about',
+                template: '<about></about>'
             });
 
         $urlRouterProvider.otherwise('/app/home');
