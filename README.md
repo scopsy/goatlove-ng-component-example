@@ -1,6 +1,12 @@
-# Component based angular 1.5 app example
+# Whitelabel-web
+# Component based angular 1.5 app
 
-A demo for my blog post at: http://blog.grossman.io/
+## Build & development
 
+1. `npm install`
+2. `gulp` (default for `gulp serve`)
+3. Go to: http://localhost:3000
 
-Based on the https://github.com/angularclass/NG6-starter.git starter boilerplate.
+## Testing
+
+`npm test`
